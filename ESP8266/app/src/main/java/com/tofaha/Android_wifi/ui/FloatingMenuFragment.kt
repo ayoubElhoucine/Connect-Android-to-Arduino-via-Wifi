@@ -1,25 +1,22 @@
-package com.tofaha.esp8266.ui
+package com.tofaha.Android_wifi.ui
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
 import com.allattentionhere.fabulousfilter.AAH_FabulousFragment
-import com.tofaha.esp8266.Pref
-import com.tofaha.esp8266.R
-import com.tofaha.esp8266.app.TofahaApplication
+import com.tofaha.Android_wifi.Pref
+import com.tofaha.Android_wifi.R
+import com.tofaha.Android_wifi.app.TofahaApplication
 
 import javax.inject.Inject
 
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
-import com.tofaha.esp8266.Util
-import kotlinx.android.synthetic.main.float_menu.*
-import kotlinx.android.synthetic.main.ip_address_dialog.*
+import com.tofaha.Android_wifi.Util
 import kotlinx.android.synthetic.main.ip_address_dialog.view.*
 import kotlinx.android.synthetic.main.port_number_dialog.view.*
 

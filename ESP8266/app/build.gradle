@@ -11,7 +11,7 @@ apply plugin: 'com.jakewharton.hugo'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.tofaha.esp8266"
+        applicationId "com.tofaha.Android_wifi"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

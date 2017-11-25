@@ -1,8 +1,8 @@
-package com.tofaha.esp8266.dagger
+package com.tofaha.Android_wifi.dagger
 
-import com.tofaha.esp8266.ui.FloatingMenuFragment
-import com.tofaha.esp8266.ui.InfoActivity
-import com.tofaha.esp8266.ui.MainActivity
+import com.tofaha.Android_wifi.ui.FloatingMenuFragment
+import com.tofaha.Android_wifi.ui.InfoActivity
+import com.tofaha.Android_wifi.ui.MainActivity
 
 import javax.inject.Singleton
 

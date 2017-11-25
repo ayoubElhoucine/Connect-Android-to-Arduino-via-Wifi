@@ -1,6 +1,5 @@
-package com.tofaha.esp8266.ui
+package com.tofaha.Android_wifi.ui
 
-import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
@@ -9,9 +8,8 @@ import android.support.annotation.RequiresApi
 import android.widget.Toast
 import butterknife.ButterKnife
 import butterknife.OnClick
-import com.tofaha.esp8266.R
-import com.tofaha.esp8266.Util
-import com.tofaha.esp8266.app.TofahaApplication
+import com.tofaha.Android_wifi.R
+import com.tofaha.Android_wifi.app.TofahaApplication
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

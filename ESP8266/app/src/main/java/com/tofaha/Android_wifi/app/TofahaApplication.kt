@@ -1,9 +1,9 @@
-package com.tofaha.esp8266.app
+package com.tofaha.Android_wifi.app
 
 import android.app.Application
-import com.tofaha.esp8266.dagger.AppComponent
-import com.tofaha.esp8266.dagger.AppModule
-import com.tofaha.esp8266.dagger.DaggerAppComponent
+import com.tofaha.Android_wifi.dagger.AppComponent
+import com.tofaha.Android_wifi.dagger.AppModule
+import com.tofaha.Android_wifi.dagger.DaggerAppComponent
 
 /**
  * Created by ayoub on 11/23/17.

@@ -1,7 +1,7 @@
-package com.tofaha.esp8266.dagger
+package com.tofaha.Android_wifi.dagger
 
 import android.content.Context
-import com.tofaha.esp8266.Pref
+import com.tofaha.Android_wifi.Pref
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

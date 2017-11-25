@@ -1,4 +1,4 @@
-package com.tofaha.esp8266.ui
+package com.tofaha.Android_wifi.ui
 
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
@@ -6,16 +6,13 @@ import android.os.Build
 import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
-import com.tofaha.esp8266.Pref
-import com.tofaha.esp8266.R
-import com.tofaha.esp8266.Util
-import com.tofaha.esp8266.app.TofahaApplication
+import com.tofaha.Android_wifi.Pref
+import com.tofaha.Android_wifi.R
+import com.tofaha.Android_wifi.Util
+import com.tofaha.Android_wifi.app.TofahaApplication
 
 import javax.inject.Inject
 
