@@ -47,6 +47,9 @@ dependencies {
     //fabulus filter
     implementation 'com.allattentionhere:fabulousfilter:0.0.4'
 
+    // Anko
+    implementation "org.jetbrains.anko:anko:0.10.3"
+
     // Butterknife
     implementation 'com.jakewharton:butterknife:8.8.1'
     kapt 'com.jakewharton:butterknife-compiler:8.8.1'

@@ -1,5 +1,6 @@
 package com.tofaha.Android_wifi.app
 
+import com.tofaha.Android_wifi.ui.MainActivity
 import java.net.Socket
 
 /**
@@ -8,4 +9,5 @@ import java.net.Socket
 
 object MyData {
     lateinit var socket: Socket
+    lateinit var mainActivity : MainActivity
 }

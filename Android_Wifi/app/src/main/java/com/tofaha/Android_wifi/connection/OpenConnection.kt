@@ -1,8 +1,10 @@
 package com.tofaha.Android_wifi.connection
 
 import android.os.AsyncTask
+import android.os.Handler
 
 import com.tofaha.Android_wifi.app.MyData
+import com.tofaha.Android_wifi.ui.MainActivity
 
 import java.io.IOException
 import java.net.Socket
@@ -13,10 +15,14 @@ import java.net.Socket
 
 class OpenConnection(private val ipAddress: String, private val portNumber: Int) : AsyncTask<Void, String, Void>() {
 
+
     override fun doInBackground(vararg voids: Void): Void? {
         try {
             MyData.socket = Socket(ipAddress, portNumber)
             System.out.println("connection opened")
+
+            MyData.mainActivity.receiveMessage()
+
         } catch (e: IOException) {
             e.printStackTrace()
         }

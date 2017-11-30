@@ -12,15 +12,101 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                card_view:cardUseCompatPadding="true"
+                android:layout_weight="1"
+                card_view:cardElevation="6dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp">
+
+                <LinearLayout
+                    android:id="@+id/refresh_connection"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@drawable/btn_transparent_selector"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/blue_menu"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:text="Refresh Conx"
+                        android:layout_marginRight="10dp"
+                        android:textStyle="bold"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/refresh_blue"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardUseCompatPadding="true"
+                android:layout_weight="1"
+                card_view:cardElevation="6dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/led1"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="LED 1"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/blue_menu_button"
+                        android:textStyle="bold" />
+
+                    <Switch
+                        android:id="@+id/led2"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="LED 2"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/blue_menu_button"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="130dp"
             card_view:cardUseCompatPadding="true"
             card_view:cardElevation="6dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp">
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -29,6 +115,7 @@
                 android:gravity="center">
 
                 <EditText
+                    android:id="@+id/text_message"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -39,14 +126,14 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_marginLeft="15dp"
                     android:background="@color/blue_menu" />
 
                 <LinearLayout
                     android:id="@+id/send_message"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:orientation="horizontal"
                     android:layout_marginRight="15dp"
                     android:layout_marginLeft="15dp"
@@ -58,14 +145,14 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/blue_menu"
                         android:gravity="center"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:text="Send"
                         android:layout_marginRight="10dp"
                         android:textStyle="bold"/>
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:src="@drawable/send_blue"/>
 
                 </LinearLayout>
@@ -75,61 +162,75 @@
 
         </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            card_view:cardUseCompatPadding="true"
-            card_view:cardElevation="6dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="10dp"
-                android:orientation="horizontal">
-
-                <Switch
-                    android:id="@+id/led1"
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:text="LED 1"
-                    android:layout_marginRight="20dp"
-                    android:textColor="@color/blue_menu_button"
-                    android:textStyle="bold" />
-
-                <Switch
-                    android:id="@+id/led2"
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:text="LED 2"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="@color/blue_menu_button"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:tint="@android:color/white"
-        android:src="@drawable/ic_filter"
-        app:backgroundTint="@color/blue_menu"
-        app:elevation="0dp" />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="6dp"
+        android:background="@color/transparent"
+        android:layout_alignParentBottom="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/blue_menu"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:text="Server Response"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/blue_menu" />
+
+                <TextView
+                    android:id="@+id/server_response"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:padding="20dp"
+                    android:textSize="17sp"
+                    android:text="Waiting ....."/>
+
+
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+                android:tint="@android:color/white"
+                android:src="@drawable/ic_filter"
+                app:backgroundTint="@color/blue_menu"
+                app:elevation="0dp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
 
 
 
