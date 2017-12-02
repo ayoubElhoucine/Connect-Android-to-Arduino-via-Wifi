@@ -10,4 +10,5 @@ import java.net.Socket
 object MyData {
     lateinit var socket: Socket
     lateinit var mainActivity : MainActivity
+    var THREAD_RUNNING = false
 }

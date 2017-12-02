@@ -21,7 +21,9 @@ class OpenConnection(private val ipAddress: String, private val portNumber: Int)
             MyData.socket = Socket(ipAddress, portNumber)
             System.out.println("connection opened")
 
-            MyData.mainActivity.receiveMessage()
+            if (MyData.THREAD_RUNNING == false){
+                MyData.mainActivity.receiveMessage()
+            }
 
         } catch (e: IOException) {
             e.printStackTrace()

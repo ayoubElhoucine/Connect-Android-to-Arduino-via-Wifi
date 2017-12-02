@@ -12,6 +12,7 @@ interface Constant {
 
         val IP_ADDRESS = "ip_address"
         val PORT_NUMBER = "port_number"
+
     }
 
 }

@@ -110,6 +110,7 @@ class MainActivity : AppCompatActivity() , MainView{
 
             input = BufferedReader(InputStreamReader(MyData.socket.getInputStream()))
             var msgText = "waiting ...."
+            MyData.THREAD_RUNNING = true
 
             while (true) {
 
