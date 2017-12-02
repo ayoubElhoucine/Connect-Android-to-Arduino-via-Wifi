@@ -1,4 +1,4 @@
-package com.tofaha.Android_wifi.ui
+package com.tofaha.Android_wifi.ui.main
 
 /**
  * Created by ayoub on 11/30/17.

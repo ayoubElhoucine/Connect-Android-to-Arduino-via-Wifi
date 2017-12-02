@@ -1,10 +1,8 @@
 package com.tofaha.Android_wifi.connection
 
 import android.os.AsyncTask
-import android.os.Handler
 
 import com.tofaha.Android_wifi.app.MyData
-import com.tofaha.Android_wifi.ui.MainActivity
 
 import java.io.IOException
 import java.net.Socket

@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">ESP8266</string>
+    <string name="app_name">Android Wifi</string>
+
+    <string name="code_source">the application code source and arduino program are both available in my  github repository with a brief explanation about the communication between the two endpoint</string>
+
+    <string name="my_repo"><a href="https://github.com/ayoubElhoucine/Connect-Android-to-Arduino-via-Wifi">Navigate into the code source repository</a></string>
+
 </resources>

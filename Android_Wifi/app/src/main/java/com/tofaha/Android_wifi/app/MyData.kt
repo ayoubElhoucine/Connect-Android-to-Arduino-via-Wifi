@@ -1,6 +1,6 @@
 package com.tofaha.Android_wifi.app
 
-import com.tofaha.Android_wifi.ui.MainActivity
+import com.tofaha.Android_wifi.ui.main.MainActivity
 import java.net.Socket
 
 /**

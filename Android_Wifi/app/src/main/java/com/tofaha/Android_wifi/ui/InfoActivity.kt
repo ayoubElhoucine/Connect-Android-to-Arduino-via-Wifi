@@ -19,6 +19,7 @@ import javax.inject.Inject
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
+import com.tofaha.Android_wifi.ui.main.MainActivity
 
 class InfoActivity : AppCompatActivity() {
 

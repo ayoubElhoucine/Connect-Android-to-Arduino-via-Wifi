@@ -65,8 +65,9 @@
                     android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
                     android:layout_margin="20dp"
+                    android:inputType="textWebEmailAddress|numberPassword|phone"
+                    android:digits="0123456789."
                     android:gravity="center"
                     android:hint="IP address" />
 
@@ -78,7 +79,8 @@
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
+                    android:digits="0123456789"
                     android:hint="port number"/>
 
                 <Button

@@ -2,7 +2,7 @@ package com.tofaha.Android_wifi.dagger
 
 import com.tofaha.Android_wifi.ui.FloatingMenuFragment
 import com.tofaha.Android_wifi.ui.InfoActivity
-import com.tofaha.Android_wifi.ui.MainActivity
+import com.tofaha.Android_wifi.ui.main.MainActivity
 
 import javax.inject.Singleton
 

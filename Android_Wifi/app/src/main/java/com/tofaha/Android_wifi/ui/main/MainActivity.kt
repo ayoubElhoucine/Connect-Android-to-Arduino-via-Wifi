@@ -1,33 +1,29 @@
-package com.tofaha.Android_wifi.ui
+package com.tofaha.Android_wifi.ui.main
 
 import android.graphics.drawable.ColorDrawable
-import android.net.http.HttpResponseCache
 import android.os.*
 import android.support.v7.app.AppCompatActivity
 import android.support.annotation.RequiresApi
 import android.widget.EditText
-import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.tofaha.Android_wifi.Pref
 import com.tofaha.Android_wifi.R
-import com.tofaha.Android_wifi.app.Constant
 import com.tofaha.Android_wifi.app.MyData
 import com.tofaha.Android_wifi.app.TofahaApplication
 import com.tofaha.Android_wifi.connection.CLoseConnection
 import com.tofaha.Android_wifi.connection.OpenConnection
 import com.tofaha.Android_wifi.connection.SendMessages
+import com.tofaha.Android_wifi.ui.FloatingMenuFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import java.io.*
-import java.net.Socket
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() , MainView{
+class MainActivity : AppCompatActivity() , MainView {
 
 
     var input: BufferedReader? = null
@@ -61,18 +57,18 @@ class MainActivity : AppCompatActivity() , MainView{
         led1.setOnClickListener({
             var m : String
             if (led1.isChecked)
-                m = "11"
+                m = "pin=11"
             else
-                m = "01"
+                m = "pin=01"
             sendMessage(m)
         })
 
         led2.setOnClickListener({
             var m : String
             if (led2.isChecked)
-                m = "22"
+                m = "pin=22"
             else
-                m = "02"
+                m = "pin=02"
             sendMessage(m)
         })
 

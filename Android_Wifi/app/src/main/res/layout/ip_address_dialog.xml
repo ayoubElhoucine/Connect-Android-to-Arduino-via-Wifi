@@ -21,9 +21,11 @@
         android:id="@+id/ip_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="40dp"
         android:gravity="center"
         android:hint="IP address"
+        android:inputType="textWebEmailAddress|numberPassword|phone"
+        android:digits="0123456789."
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp" />
 
@@ -50,7 +52,7 @@
             android:background="@drawable/btn_accent_selector"
             android:textColor="@color/blue_menu_button"
             android:layout_margin="1dp"
-            android:text="Change"
+            android:text="Save"
             android:layout_weight="1"/>
 
     </LinearLayout>
