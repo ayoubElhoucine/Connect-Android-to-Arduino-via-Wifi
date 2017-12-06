@@ -1,6 +1,1 @@
-<<<<<<< HEAD
-# esp8266
-Android application that send messages to Arduino board via Wifi communication
-=======
-# Android-Wifi
->>>>>>> abf04107b30c93db5855c86d8d1b3517058d4a53
+Android wifi is demo aplication that shows you how to connect and send messages to Arduino via wifi communication , the demo android app is also provided in google play under the link https://play.google.com/store/apps/details?id=com.tofaha.Android_wifi 
