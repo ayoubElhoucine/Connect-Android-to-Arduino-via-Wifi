@@ -3,7 +3,7 @@ the communication system based on sever/client communication , in which android 
 
 
 Android side (Kotlin) :
-in the android side the steps to communicate to arduino is very easy , the socket client is used for that , the socket client needs two parameters to find the tareget wifi module the first parameter is the wifi module IP address , and the seconde parameter is the port number , well the first thing you need to do is to open a socket connection , the server side (arduino with wifi module) has to be launched first and then the client (android device) will reach the server by the ip address and port number , you should be aware of where you instanciate the socket because it has to be instanciated in diffrent thread then the UI thread , if you do it in UI thread the app will crash , here sample how to open socket connection inside :
+in the android side the steps to communicate to arduino is very easy , the socket client is used for that , the socket client needs two parameters to find the tareget wifi module the first parameter is the wifi module IP address , and the seconde parameter is the port number , well the first thing you need to do is to open a socket connection , the server side (arduino with wifi module) has to be launched first and then the client (android device) will reach the server by the ip address and port number , you should be aware of where you instanciate the socket because it has to be instanciated in diffrent thread then the UI thread , if you do it in UI thread the app will crash , here sample how to open socket connection inside asyncTask:
 
 
 class OpenConnection(private val ipAddress: String, private val portNumber: Int) : AsyncTask<Void, String, Void>() {
@@ -89,4 +89,94 @@ class CLoseConnection : AsyncTask<Void , String , Void>(){
 
 }
  
- 
+
+Server Side (Arduino with wifi module)
+in the server side I use arduino with wifi module(ESP8266) , well the first thing you need to consider is how to communicate arduino with the module , the communication will be done by the serial communication(Rx/Tx) , arduino board contains UART(Universal Asynchronious Receiver Transmmiter) , and the number of UART that arduino board contain is depend on the type of arduino like arduino uno has only one UART , so we are going to use the library of the serialSoftwar in arduino and by this library we can write and read to serial buffer (Rx/Tx) , after that we attach the Rx and Tx pin to Tx and Rx pin of the ESP8266 , this is how to communicate arduino with ESP8266 :
+
+    #include <SoftwareSerial.h>
+    SoftwareSerial ESP8266(2,3);
+    
+
+after the communication is established you now need to configure ESP as you need it to work , and that will be done by the ATcommand , in arduino IDE we will type the ATcommand and write it to the serialSoftware :
+
+    void sendESP8266Cmdln(String cmd, int waitTime)
+    {
+      ESP8266.println(cmd);
+      delay(waitTime);
+      clearESP8266SerialBuffer();
+    }
+    
+    void setup() {
+  
+      Serial.begin(9600); 
+      ESP8266.begin(115200);  // change this value to your wifi module (esp8266) baud rate
+
+      do{
+      ESP8266.println("AT");
+        delay(1000);
+        if(ESP8266.find((char*)"OK"))
+        {
+          Serial.println("Module is ready");
+          delay(1000);
+          clearESP8266SerialBuffer();
+
+          //configure ESP as station 
+          sendESP8266Cmdln("AT+CWMODE=1",1000);
+
+          //Join Wifi network
+          sendESP8266Cmdln("AT+CWJAP="+ssid+","+pass,6500);
+
+          //Get and display my IP
+          sendESP8266Cmdln("AT+CIFSR", 1000);  
+
+          //Set multi connections
+          sendESP8266Cmdln("AT+CIPMUX=1", 1000);
+
+          //Setup web server on port 80
+          sendESP8266Cmdln("AT+CIPSERVER=1,3333",1000);
+
+          Serial.println("Server setup finish");
+
+          FAIL_8266 = false;
+
+        }
+        else{
+          Serial.println("Module have no response.");
+          delay(500);
+          FAIL_8266 = true;
+        }
+      }while(FAIL_8266);
+
+      ESP8266.setTimeout(100); 
+
+    }
+
+after the configuration and setup of the ESP now you are ready to send and recieve data from client :
+to recieve data from client is very easy step , first you need to prepare the server and that will be done in the setup part , after that you write this code inside the loop method :
+
+    void loop() {
+
+      if(ESP8266.available()){
+
+        String msg = ESP8266.readString();
+        Serial.println("MSG: "+msg);
+
+      }
+    }
+
+to send data to client , well in this case to establish the client you need communication id , so if there are for exemple 5 client , so you need 5 communication id to send to each client , and in the case there is only one client you can use 0 as the value of the communication id :
+
+    
+    connectionId = 0 ;
+    void sendStringResponse(int connectionId, String content)
+    {     
+         sendCIPData(connectionId,content);
+    }
+    
+    void loop() {
+
+        if ( Serial.available() ){  
+            String s = Serial.readString();
+            sendStringResponse(connectionId , s + "\r\n"); 
+        }
+    }
