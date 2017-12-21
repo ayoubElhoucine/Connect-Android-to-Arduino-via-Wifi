@@ -10,13 +10,13 @@ int connectionId = 0 ; // the connection id is O only if there is one client
 #define BUFFER_SIZE 128
 char buffer[BUFFER_SIZE];
 
-String ssid="\"ayoub\"";
-String pass="\"ayoub1234\"";
+String ssid="\"SSID\""; // the network ssid 
+String pass="\"ayoub1234\""; // the network password
 
 void setup() {
   
-  Serial.begin(9600);
-  ESP8266.begin(115200);
+  Serial.begin(9600); 
+  ESP8266.begin(115200);  // change this value to your wifi module (esp8266) baud rate
   
   do{
   ESP8266.println("AT");
