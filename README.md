@@ -7,7 +7,7 @@ in the android side the steps to communicate to arduino is very easy , the socke
 
 ## Open socket connection
 
-    **class OpenConnection(private val ipAddress: String, private val portNumber: Int) : AsyncTask<Void, String, Void>() {
+    class OpenConnection(private val ipAddress: String, private val portNumber: Int) : AsyncTask<Void, String, Void>() {
 
         override fun doInBackground(vararg voids: Void): Void? {
             try {
@@ -20,7 +20,7 @@ in the android side the steps to communicate to arduino is very easy , the socke
 
             return null
         }
-    }**
+    }
  
 ## Send messages
 
