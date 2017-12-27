@@ -22,7 +22,7 @@ class OpenConnection(private val ipAddress: String, private val portNumber: Int)
     }
 }
  
-#### Send messages
+## Send messages
 
 and to send messages to server , you will need printWriter object to write in socket ibject that you already created and the socket will do the rest , here how you can do it :
 
@@ -51,7 +51,7 @@ class SendMessages(msg: String) : AsyncTask<Void, String, Void>() {
     }
 }
 
-#### Receive messages
+## Receive messages
 
 and to recieve messages from server , all you need to do is create an instance of bufferReader and pass the socket to it as parameter , and of course you need to do that inside loop with time out as optional , so whenever the server send message the socket object will receive it and bufferdReader will read the message from socket and you write it to the UI thread , here is the code (I used anko library in this code):
 
@@ -76,7 +76,7 @@ and to recieve messages from server , all you need to do is create an instance o
 
 to close the connection that what you do : socket.close() method :
 
-#### Close connection
+## Close connection
 
 class CLoseConnection : AsyncTask<Void , String , Void>(){
 
@@ -99,12 +99,12 @@ class CLoseConnection : AsyncTask<Void , String , Void>(){
 # Server Side (Arduino with wifi module)
 in the server side I use arduino with wifi module(ESP8266) , well the first thing you need to consider is how to communicate arduino with the module , the communication will be done by the serial communication(Rx/Tx) , arduino board contains UART(Universal Asynchronious Receiver Transmmiter) , and the number of UART that arduino board contain is depend on the type of arduino like arduino uno has only one UART , so we are going to use the library of the serialSoftwar in arduino and by this library we can write and read to serial buffer (Rx/Tx) , after that we attach the Rx and Tx pin to Tx and Rx pin of the ESP8266 , this is how to communicate arduino with ESP8266 :
 
-#### Communicate arduino with esp module
+## Communicate arduino with esp module
 
     #include <SoftwareSerial.h>
     SoftwareSerial ESP8266(2,3); //(Rx/Tx) that means you have to attach pin 2 with esp Tx and pin 3 with esp Rx
     
-#### ESP configuration and setup with AT commands
+## ESP configuration and setup with AT commands
 
 after the communication is established you now need to configure ESP as you need it to work , and that will be done by the ATcommand , in arduino IDE we will type the ATcommand and write it to the serialSoftware :
 
@@ -160,7 +160,7 @@ after the communication is established you now need to configure ESP as you need
 
     }
 
-#### Receive messages from client 
+## Receive messages from client 
 
 after the configuration and setup of the ESP now you are ready to send and recieve data from client :
 to recieve data from client is very easy step , first you need to prepare the server and that will be done in the setup part , after that you write this code inside the loop method :
@@ -175,7 +175,7 @@ to recieve data from client is very easy step , first you need to prepare the se
       }
     }
 
-#### Send messages to client 
+## Send messages to client 
 
 to send data to client , well in this case to establish the client you need communication id , so if there are for exemple 5 client , so you need 5 communication id to send to each client , and in the case there is only one client you can use 0 as the value of the communication id :
 
