@@ -55,7 +55,7 @@ class SendMessages(msg: String) : AsyncTask<Void, String, Void>() {
 
 and to recieve messages from server , all you need to do is create an instance of bufferReader and pass the socket to it as parameter , and of course you need to do that inside loop with time out as optional , so whenever the server send message the socket object will receive it and bufferdReader will read the message from socket and you write it to the UI thread , here is the code (I used anko library in this code):
 
- doAsync {
+        doAsync {
 
             input = BufferedReader(InputStreamReader(MyData.socket.getInputStream()))
             var msgText = "waiting ...."
